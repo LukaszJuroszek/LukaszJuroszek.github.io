@@ -1,26 +1,47 @@
-﻿<!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Graph</title>
-    <base href="/" />
-    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/app.css" rel="stylesheet" />
-    <script src="_content/Graph.Component/js/graphComponents.js" integrity=""></script>
-    <script src="_content/Graph.Component/css/styles.css" integrity=""></script>
+    <script type="text/javascript" src="canvasjs.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="vis.css" />
+    <link type="text/css" rel="stylesheet" href="bootstrap.min.css" />
+    <link type="text/javascript" rel="stylesheet" href="bundle.js" />
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <style type="text/css">
+        #paretoChart,
+        #sumChart {
+            height: 80%;
+            width: 100%;
+        }
+        #s1,
+        h4,
+        h3,
+        h2 #currentStatus,
+        .btn {
+            text-align: center;
+            font-size: 25px;
+        }
+    </style>
 </head>
 
 <body>
-    <app>Loading...</app>
-
-    <div id="blazor-error-ui">
-        An unhandled error has occurred.
-        <a href="" class="reload">Reload</a>
-        <a class="dismiss">🗙</a>
-    </div>
-    <script src="_framework/blazor.webassembly.js" integrity=""></script>
+    <div class="container-fluid">
+        <div class="row m-0 p-0 h-50">
+            <div class="col-md-6 m-0 p-0" id="graphNetwork"></div>
+            <div class="col-md-6 m-0 p-0 h-100" id="paretoChart"></div>
+            <div class="col-md-12 m-0 p-0 " id="sumChart"></div>
+            <h4 class="col-md-2 col-sm-3" id="dfsResult">Consistent: false</h2>
+                <h4 class="col-md-2 col-sm-3" id="nodeCount">Nodes: 0</h2>
+                    <h4 class="col-md-2 col-sm-3" id="probability">Probability: 0</h2>
+                        <button class="btn btn-danger col-md-1" id="decreaseProbability">-</button>
+                        <button class="btn btn-success col-md-1" id="increaseProbability">+</button>
+                        <button class="btn btn-info col-md-1" id="generate">Generate</button>
+                        <button class="btn btn-info col-md-3" id="run">Run evolution</button>
+                        <h4 class="col-md-12" id="currentStatus">Current Status: Waiting</h2>
+        </div>
 </body>
 
 </html>
+<script src="bundle.js"></script>
